@@ -1,8 +1,20 @@
-import Image from "next/image";
+"use client";
 
-const { default: Header } = require("@/components/header");
+import { useEffect, useState } from "react";
+import Image from "next/image"; 
+
 
 const Inicio = () => {
+  const [picture, setPicture] = useState(null);
+
+  useEffect(() => {
+    // Recuperando a imagem do localStorage
+    const picture = localStorage.getItem("picture");
+    if (picture) {
+      setPicture(picture);
+    }
+  }, []);
+
   return (
     <div>
       <header className="lg:px-20 backdrop-blur-xl bg-black/70 flex justify-between items-center w-full p-4">
@@ -20,7 +32,7 @@ const Inicio = () => {
         <nav>
           <Image
             className="bg-white rounded-full w-10 h-10"
-            src="/perfil.webp"
+            src={picture}
             width={30}
             height={30}
             alt="foto perfil"

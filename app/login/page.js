@@ -10,8 +10,8 @@ const Login = () => {
 
       <div className="h-screen flex justify-center items-center">
         <form className="max-w-xs bg-black/50 p-7 rounded-xl w-full flex flex-col gap-3 mx-auto">
-          <label for="email">Email</label>
-          <div className="flex gap-2 bg-white text-black rounded-md py-1 px-2">
+          <label className="lg:text-xl" for="email">Email</label>
+          <div className="flex gap-2 bg-white text-black rounded-md py-1 px-2 lg:py-2">
             <svg
               fill="none"
               viewBox="0 0 24 24"
@@ -42,10 +42,10 @@ const Login = () => {
               required
             />
           </div>
-          <label className="block" for="senha">
+          <label className="block lg:text-xl" for="senha">
             Senha
           </label>
-          <div className="flex gap-2 bg-white text-black rounded-md py-1 px-2">
+          <div className="flex gap-2 bg-white text-black rounded-md py-1 px-2 lg:py-2">
               <svg
                 fill="none"
                 viewBox="0 0 24 24"
@@ -83,7 +83,7 @@ const Login = () => {
           </div>
 
           <input
-            className="cursor-pointer bg-blue-500 font-semibold rounded-md py-1 px-2"
+            className="cursor-pointer bg-blue-500 font-semibold rounded-md py-1 px-2 lg:py-2"
             type="button"
             value="entrar"
           />
