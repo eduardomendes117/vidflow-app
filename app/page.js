@@ -1,10 +1,6 @@
 import Image from "next/image";
 import Header from "@/components/header";
 import Home from "@/components/home";
-import SvgInstagram from "../public/instagram.svg";
-import SvgYoutube from "../public/Youtube.svg";
-import SvgPinterest from "../public/Pinterest.svg";
-import SvgTiktok from "../public/TikTok.svg";
 
 export default function App() {
   return (
@@ -18,24 +14,22 @@ export default function App() {
           <div
             className="border flex gap-2 px-5 py-2 rounded-xl bg-white hover:shadow-md duration-500 hover:scale-105 h-16 w-16 text-white"
           >
-            <Image src={SvgYoutube} alt="Youtube" />
+            <Image src="/Youtube.svg" alt="YouTube" width={50} height={50} />
           </div>
           <div
             className="border flex gap-2 px-5 py-2 rounded-xl bg-white hover:shadow-md duration-500 hover:scale-105 h-16 w-16 text-white"
           >
-            <Image src={SvgInstagram} alt="instagram" />
+            <Image src="/instagram.svg" alt="Instagram" width={50} height={50} />
           </div>
-
           <div
             className="border flex gap-2 px-5 py-2 rounded-xl bg-white hover:shadow-md duration-500 hover:scale-105 h-16 w-16 text-white"
           >
-            <Image src={SvgPinterest} alt="Pinterest" />
+            <Image src="/Pinterest.svg" alt="Pinterest" width={50} height={50} />
           </div>
-
           <div
-            className="border flex gap-2  px-5 py-2 rounded-xl bg-white hover:shadow-md duration-500 hover:scale-105 h-16 w-16 text-white"
+            className="border flex gap-2 px-5 py-2 rounded-xl bg-white hover:shadow-md duration-500 hover:scale-105 h-16 w-16 text-white"
           >
-            <Image src={SvgTiktok} alt="TikTok" />
+            <Image src="/TikTok.svg" alt="TikTok" width={50} height={50} />
           </div>
         </section>
       </main>
