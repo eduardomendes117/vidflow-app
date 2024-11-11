@@ -1,10 +1,10 @@
 import Image from "next/image";
 import Header from "@/components/header";
 import Home from "@/components/home";
-import SvgInstagram from "/public/instagram.svg";
-import SvgYoutube from "/public/Youtube.svg";
-import SvgPinterest from "/public/Pinterest.svg";
-import SvgTiktok from "/public/TikTok.svg";
+import SvgInstagram from "../public/instagram.svg";
+import SvgYoutube from "../public/Youtube.svg";
+import SvgPinterest from "../public/Pinterest.svg";
+import SvgTiktok from "../public/TikTok.svg";
 
 export default function App() {
   return (
