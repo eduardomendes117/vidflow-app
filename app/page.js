@@ -14,12 +14,12 @@ export default function App() {
           <div
             className="border flex gap-2 px-5 py-2 rounded-xl bg-white hover:shadow-md duration-500 hover:scale-105 h-16 w-16 text-white"
           >
-            <Image src="/Youtube.svg" alt="YouTube" width={50} height={50} />
+            <Image src="/YouTube.svg" alt="YouTube" width={50} height={50} />
           </div>
           <div
             className="border flex gap-2 px-5 py-2 rounded-xl bg-white hover:shadow-md duration-500 hover:scale-105 h-16 w-16 text-white"
           >
-            <Image src="/instagram.svg" alt="Instagram" width={50} height={50} />
+            <Image src="/Instagram.svg" alt="Instagram" width={50} height={50} />
           </div>
           <div
             className="border flex gap-2 px-5 py-2 rounded-xl bg-white hover:shadow-md duration-500 hover:scale-105 h-16 w-16 text-white"
