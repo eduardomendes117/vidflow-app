@@ -3,9 +3,9 @@ import Image from "next/image";
 
 const Home = () => {
   return (
-    <div className="flex justify-center items-center">
+    <div className="flex flex-wrap justify-center items-center">
       <section className="max-w-screen-sm h-svh flex flex-col justify-center gap-3 lg:gap-10 p-5">
-        <h1 className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-medium lg:leading-tight">
+        <h1 className="text-3xl lg:text-4xl xl:text-5xl font-medium lg:leading-tight">
           Automatize Suas Postagens de Vídeo em Múltiplas Plataformas com
           Facilidade
         </h1>

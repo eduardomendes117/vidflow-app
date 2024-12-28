@@ -49,8 +49,8 @@ export default function Register() {
 
   return (
     <div className="bg-gray-100">
-      <div className="max-w-screen h-screen grid grid-cols-2 mx-auto">
-        <h1 className="font-bold lg:text-4xl flex justify-center gap-2 items-center bg-slate-100">
+      <div className="max-w-screen h-screen grid lg:grid-cols-2 mx-auto">
+        <h1 className="hidden font-bold lg:text-4xl lg:flex justify-center gap-2 items-center bg-slate-100">
           <Image
             className="fill-white"
             src="/vidflow.svg"

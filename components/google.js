@@ -27,7 +27,7 @@ function GoogleLoginButton() {
 
     localStorage.setItem("picture", picture);
 
-    router.push("/inicio");
+    router.push("/dashboard");
   };
 
   const handleLoginError = () => {
