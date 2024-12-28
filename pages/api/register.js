@@ -1,5 +1,5 @@
 // /pages/api/register.js
-import db from "../../../backend/db";
+
 
 export default function handler(req, res) {
   if (req.method === "POST") {
