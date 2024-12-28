@@ -1,18 +1,17 @@
 "use client";
 
-import Image from "next/image";
 import { useState } from "react";
-import { useRouter } from "next/navigation";
+import Image from "next/image";
 import Link from "next/link";
-import Google from "@/components/google";
+import { useRouter } from "next/navigation";
 
-export default function Login() {
+export default function Register() {
   const [formData, setFormData] = useState({
     email: "",
     senha: "",
   });
-  const [errorMessage, setErrorMessage] = useState(""); // Armazenando mensagens de erro
-  const router = useRouter(); // Hook para redirecionamento
+  const [errorMessage, setErrorMessage] = useState("");
+  const router = useRouter();
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -21,11 +20,9 @@ export default function Login() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setErrorMessage(""); // Limpa mensagens de erro anteriores
-
-    // Simula um fetch para validar o login (substitua por uma chamada de API real)
+    setErrorMessage("");
     try {
-      const response = await fetch("/api/login", {
+      const response = await fetch("/api/register", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -34,21 +31,18 @@ export default function Login() {
       });
 
       if (response.ok) {
-        const data = await response.json();
-        alert("Login bem-sucedido!");
-
-        // Redireciona para o dashboard ou página principal após login bem-sucedido
-        router.push("/inicio");
+        alert("Conta criada com sucesso!");
+        router.push("/login");
       } else {
         const errorData = await response.json();
         setErrorMessage(
-          errorData.message || "Credenciais inválidas. Tente novamente."
+          errorData.message || "Erro desconhecido. Tente novamente."
         );
       }
     } catch (error) {
-      console.error("Erro ao fazer login", error);
+      console.error("Erro ao registrar", error);
       setErrorMessage(
-        "Ocorreu um erro ao tentar fazer login. Tente novamente."
+        "Ocorreu um erro ao tentar criar sua conta. Tente novamente."
       );
     }
   };
@@ -72,8 +66,10 @@ export default function Login() {
             className="max-w-sm p-7 rounded-3xl w-full flex flex-col gap-1 mx-auto"
             onSubmit={handleSubmit}
           >
-            <p className="font-medium">Bem-vindo de volta</p>
-            <h1 className="text-xl lg:text-2xl mb-3 font-semibold">Faça login na sua conta</h1>
+            <p className="font-medium">Bem-vindo ao VidFlow</p>
+            <h1 className="text-xl lg:text-2xl mb-3 font-semibold">
+              Crie sua conta
+            </h1>
             {errorMessage && (
               <div className="text-red-500 text-sm mb-3">{errorMessage}</div>
             )}
@@ -98,29 +94,21 @@ export default function Login() {
               onChange={handleInputChange}
               required
             />
-            <div className="text-sm flex justify-between">
-              <div className="flex items-center gap-1">
-                <input type="checkbox" name="remember" id="remember" />
-                <label htmlFor="remember">Lembre de mim</label>
-              </div>
-              <a className="text-blue-500" href="#">
-                Esqueceu sua senha?
-              </a>
-            </div>
+
             <button
               type="submit"
               className="cursor-pointer bg-blue-500 text-white hover:bg-blue-700 font-medium text-sm rounded-lg px-2 py-3 mt-3"
             >
-              Entrar na conta
+              Criar conta
             </button>
-            <Google />
+
             <p className="text-center text-sm mt-5">
-              Não tem uma conta?{" "}
+              Já tem uma conta?{" "}
               <Link
-                href="/register"
+                href="/login"
                 className="text-blue-500 hover:underline font-medium"
               >
-                inscrever-se
+                entrar na conta
               </Link>
             </p>
           </form>

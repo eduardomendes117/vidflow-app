@@ -7,30 +7,46 @@ export default function App() {
     <div className="font-[family-name:var(--font-geist-sans)]">
       <Header />
 
-      <main className="flex flex-col items-center justify-center bg-stone-200">
+      <main className="flex flex-col items-center justify-center bg-slate-100">
         <Home />
 
-        <section className="flex justify-around max-w-xs w-full pb-20">
-          <div
-            className="border flex gap-2 px-5 py-2 rounded-xl bg-white hover:shadow-md duration-500 hover:scale-105 h-16 w-16 text-white"
-          >
-            <Image src="/YouTube.svg" alt="YouTube" width={50} height={50} />
-          </div>
-          <div
-            className="border flex gap-2 px-5 py-2 rounded-xl bg-white hover:shadow-md duration-500 hover:scale-105 h-16 w-16 text-white"
-          >
-            <Image src="/Instagram.svg" alt="Instagram" width={50} height={50} />
-          </div>
-          <div
-            className="border flex gap-2 px-5 py-2 rounded-xl bg-white hover:shadow-md duration-500 hover:scale-105 h-16 w-16 text-white"
-          >
-            <Image src="/Pinterest.svg" alt="Pinterest" width={50} height={50} />
-          </div>
-          <div
-            className="border flex gap-2 px-5 py-2 rounded-xl bg-white hover:shadow-md duration-500 hover:scale-105 h-16 w-16 text-white"
-          >
-            <Image src="/TikTok.svg" alt="TikTok" width={50} height={50} />
-          </div>
+        <section className="bg-white w-full p-10 text-center">
+          <h2 className="text-3xl font-medium">Automatize suas postagens nas redes sociais</h2>
+          <p className="text-black/70 m-5">Integrações disponiveis</p>
+
+          <ul className="flex max-w-screen-md justify-around mx-auto ">
+            <li
+              className="border flex items-center font-medium gap-2 px-4 py-1 rounded-xl bg-white hover:shadow-md duration-500 hover:scale-105 h-16"
+            >
+              <Image src="/YouTube.svg" alt="YouTube" width={40} height={40} />
+
+              Youtube
+            </li>
+
+            <li
+              className="border flex items-center font-medium gap-2 px-5 py-1 rounded-xl bg-white hover:shadow-md duration-500 hover:scale-105 h-16"
+            >
+              <Image src="/Instagram.svg" alt="Instagram" width={30} height={30} />
+
+              Instagram
+            </li>
+
+            <li
+              className="border flex  items-center font-medium gap-2 px-4 py-1 rounded-xl bg-white hover:shadow-md duration-500 hover:scale-105 h-16"
+            >
+              <Image src="/Pinterest.svg" alt="Pinterest" width={30} height={30} />
+
+              Pinterest
+            </li>
+
+            <li
+              className="border flex items-center gap-2 px-4 py-1 rounded-xl bg-white hover:shadow-md duration-500 hover:scale-105 h-16"
+            >
+              <Image src="/TikTok.svg" alt="TikTok" width={30} height={30} />
+
+              Tiktok
+            </li>
+          </ul>
         </section>
       </main>
 

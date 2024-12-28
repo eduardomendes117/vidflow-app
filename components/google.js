@@ -1,24 +1,22 @@
 "use client";
 
-import { GoogleOAuthProvider, GoogleLogin } from "@react-oauth/google";
-import { useRouter } from "next/navigation"; // Importando useRouter
+import { GoogleOAuthProvider, useGoogleLogin } from "@react-oauth/google";
+import { useRouter } from "next/navigation";
+import { FcGoogle } from "react-icons/fc";
 
 const clientId =
   "839385603142-i6vdv0tqupvv4luhb05hpah2pf6ilgo8.apps.googleusercontent.com";
 
-export default function Google() {
-  const router = useRouter(); // Inicializando o roteador
+function GoogleLoginButton() {
+  const router = useRouter();
 
-  const handleLoginSuccess = async (response) => {
-    console.log("Login Successful:", response);
+  const handleLoginSuccess = async (credentialResponse) => {
+    console.log("Login Successful:", credentialResponse);
 
-    // Acessando o token de credencial
-    const { credential } = response;
+    const { credential } = credentialResponse;
 
-    // Decodificando o token JWT para obter os dados do usuário
-    const user = JSON.parse(atob(credential.split('.')[1]));
+    const user = JSON.parse(atob(credential.split(".")[1]));
 
-    // Obtendo as informações do usuário
     const { email, name, picture } = user;
 
     console.log("User Profile:", {
@@ -27,25 +25,35 @@ export default function Google() {
       picture,
     });
 
-    // Armazenando as informações no localStorage
     localStorage.setItem("picture", picture);
 
-    // Redireciona o usuário para outra página (por exemplo, '/dashboard')
-    router.push('/inicio'); // Troque '/dashboard' pela rota desejada
+    router.push("/inicio");
   };
 
   const handleLoginError = () => {
     console.log("Login Failed");
   };
 
+  const login = useGoogleLogin({
+    onSuccess: handleLoginSuccess,
+    onError: handleLoginError,
+  });
+
   return (
-    <div className="mx-auto">
-      <GoogleOAuthProvider clientId={clientId}>
-        <GoogleLogin
-          onSuccess={handleLoginSuccess}
-          onError={handleLoginError}
-        />
-      </GoogleOAuthProvider>
-    </div>
+    <button
+      onClick={() => login()}
+      className="w-full px-4 py-2 bg-black/80 border flex justify-center gap-2 items-center rounded-lg text-sm text-white font-medium"
+    >
+      <FcGoogle className="text-2xl" />
+      Ou faça login com o Google
+    </button>
+  );
+}
+
+export default function Google() {
+  return (
+    <GoogleOAuthProvider clientId={clientId}>
+      <GoogleLoginButton />
+    </GoogleOAuthProvider>
   );
 }

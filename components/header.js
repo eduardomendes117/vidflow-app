@@ -3,7 +3,7 @@ import Link from "next/link";
 
 const Header = () => {
   return (
-    <header className="lg:px-20 backdrop-blur-sm flex justify-between items-center w-full p-4">
+    <header className="lg:px-20 backdrop-blur-sm flex justify-between items-center w-full p-3 shadow-sm">
       <h1 className="font-bold sm:text-xl lg:text-2xl flex gap-2 items-center">
         <Image
           className="fill-black"
@@ -15,18 +15,18 @@ const Header = () => {
         Vidflow
       </h1>
 
-      <nav className="flex gap-2">
+      <nav className="flex items-center gap-5">
+        <Link href="/">Sobre Nós</Link>
+
+        <Link href="/">Planos</Link>
+
+        <Link href="/">Contato</Link>
+
         <Link
-          className=" dark:hover:text-gray-700 border border-gray-700 py-2 px-3 lg:px-6 lg:text-xl rounded-full"
-          href="/"
-        >
-          inscreve-se
-        </Link>
-        <Link
-          className="bg-blue-500 text-white dark:hover:bg-blue-400 py-2 px-3 lg:px-6 lg:text-xl rounded-full"
+          className="bg-blue-500 text-white dark:hover:bg-blue-400 py-2 px-4 lg:px-6 lg:text-lg font-medium rounded-lg"
           href="/login"
         >
-          entrar
+          conecte-se
         </Link>
       </nav>
     </header>
