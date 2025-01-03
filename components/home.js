@@ -22,7 +22,7 @@ const Home = () => {
       </section>
 
       <section>
-        <Image width={500} height={500} src="/image.png" alt="foto"/>
+        <Image width={500} height={500} src="/redesociais.png" alt="foto"/>
       </section>
     </div>
   );
