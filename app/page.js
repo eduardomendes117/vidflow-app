@@ -10,11 +10,11 @@ export default function App() {
       <main className="flex flex-col items-center justify-center bg-slate-100">
         <Home />
 
-        <section className="bg-white w-full p-10 text-center">
-          <h2 className="text-3xl font-medium">Automatize suas postagens nas redes sociais</h2>
-          <p className="text-black/70 m-5">Integrações disponiveis</p>
+        <section className="bg-white w-full p-20 text-center">
+          <h2 className="text-3xl font-bold">Automatize suas postagens nas redes sociais</h2>
+          <p className="text-black/70 m-5 lg:text-lg">Integrações disponiveis</p>
 
-          <ul className="flex max-w-screen-md justify-around mx-auto ">
+          <ul className="flex max-w-xl justify-around mx-auto ">
             <li
               className="border flex items-center font-medium gap-2 px-4 py-1 rounded-xl bg-white hover:shadow-md duration-500 hover:scale-105 h-16"
             >
